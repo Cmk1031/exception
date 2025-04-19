@@ -1,5 +1,6 @@
 package hello.exception;
 
+import hello.exception.exception.UserHandlerExceptionResolver;
 import hello.exception.filter.LogFilter;
 import hello.exception.resolver.MyHandlerExceptionResolver;
 import jakarta.servlet.Filter;
@@ -20,6 +21,8 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void extendHandlerExceptionResolvers(List<HandlerExceptionResolver> resolvers) {
         resolvers.add(new MyHandlerExceptionResolver());
+        resolvers.add(new UserHandlerExceptionResolver());
+
     }
 
     /*@Bean
